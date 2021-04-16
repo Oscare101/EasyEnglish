@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import { AntDesign } from '@expo/vector-icons'
 import Header from './Header'
-
+import TimeLine from './TimeLine'
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
@@ -44,6 +44,7 @@ export default function MainScreen() {
           <Text>4 days of learning</Text>
         </View>
       </View>
+      <TimeLine />
     </View>
   )
 }
