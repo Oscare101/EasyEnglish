@@ -31,14 +31,34 @@
   },
   "leveltest": [
     {
-      "task": "Chose the right answer",
-      "sentence": "Find a sentence with mistake",
+      "task": "Choose the right answer (only one)",
+      "sentence": "Find a mistake",
       "A": "I book a bus yesterday",
       "B": "I booked a bus",
       "C": "I saw her in the station",
-      "D": "I don't knoe English",
+      "D": "I don't know English",
       "answer": "I book a bus yesterday",
       "explanation": "We use Past Simple (booked) when we talk about past (yesterday)"
+    },
+    {
+      "task": "Chose the right answer",
+      "sentence": "Present Perfect",
+      "A": "I have already saw this movie",
+      "B": "I took a cap of coffee",
+      "C": "I saw this pick yesterday",
+      "D": "I haven't read this book",
+      "answer": "I haven't read this book",
+      "explanation": "have/has V3"
+    },
+    {
+      "task": "Complete the dialoge",
+      "sentence": "Can I park here?",
+      "A": "Sorry I did that",
+      "B": "It's the same place",
+      "C": "Only for half an hour",
+      "D": "I'm so sorry",
+      "answer": "Only for half an hour",
+      "explanation": "have/has V3"
     }
   ]
 }
