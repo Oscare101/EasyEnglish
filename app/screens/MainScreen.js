@@ -4,16 +4,20 @@ import { StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import { AntDesign } from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+
 import text from '../../text.json'
 import Header from '../components/Header'
 import UserBigHeader from '../components/UserBigHeader'
 import NavigateItemBlock from '../components/NavigateItemBlock'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import LevelTest from './LevelTest'
 
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
-export default function MainScreen() {
+const Main = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar />
@@ -28,24 +32,28 @@ export default function MainScreen() {
         }}
         start={{ x: 0, y: 0 }}
       ></LinearGradient>
-      <Header />
+      <Header first="Easy" second="English" />
       <UserBigHeader />
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{ paddingVertical: 10 }}
       >
-        <NavigateItemBlock
-          title={text.intermediate.title}
-          description={text.intermediate.description}
-          progress={+text.intermediate.progress}
-          star={text.intermediate.star}
-        />
-        <NavigateItemBlock
-          title={text.upperintermediate.title}
-          description={text.upperintermediate.description}
-          progress={+text.upperintermediate.progress}
-          star={text.upperintermediate.star}
-        />
+        <TouchableOpacity>
+          <NavigateItemBlock
+            title={text.intermediate.title}
+            description={text.intermediate.description}
+            progress={+text.intermediate.progress}
+            star={text.intermediate.star}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <NavigateItemBlock
+            title={text.upperintermediate.title}
+            description={text.upperintermediate.description}
+            progress={+text.upperintermediate.progress}
+            star={text.upperintermediate.star}
+          />
+        </TouchableOpacity>
 
         <View
           style={{
@@ -57,29 +65,45 @@ export default function MainScreen() {
             borderRadius: 5,
           }}
         ></View>
-
-        <NavigateItemBlock
-          title={text.irregularverbs.title}
-          description={text.irregularverbs.description}
-          progress={+text.irregularverbs.progress}
-          star={text.irregularverbs.star}
-        />
-        <NavigateItemBlock
-          title={text.phrasalverbs.title}
-          description={text.phrasalverbs.description}
-          progress={+text.phrasalverbs.progress}
-          star={text.phrasalverbs.star}
-        />
+        <TouchableOpacity>
+          <NavigateItemBlock
+            title={text.irregularverbs.title}
+            description={text.irregularverbs.description}
+            progress={+text.irregularverbs.progress}
+            star={text.irregularverbs.star}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <NavigateItemBlock
+            title={text.phrasalverbs.title}
+            description={text.phrasalverbs.description}
+            progress={+text.phrasalverbs.progress}
+            star={text.phrasalverbs.star}
+          />
+        </TouchableOpacity>
       </ScrollView>
       <View>
         <Text style={styles.question}>Don't know your English level?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('LevelTest')}>
           <View style={styles.testView}>
             <Text style={styles.testTitle}>Level test</Text>
           </View>
         </TouchableOpacity>
       </View>
     </View>
+  )
+}
+
+const Stack = createStackNavigator()
+
+export default function MainScreen() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Main" headerMode="none">
+        <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="LevelTest" component={LevelTest} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 

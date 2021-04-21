@@ -1,11 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View, Dimensions } from 'react-native'
 
-export default function Header() {
+export default function Header(props) {
   return (
     <View style={styles.header}>
       <Text style={styles.headerText}>
-        Easy <Text style={styles.dark}>English</Text>
+        {props.first} <Text style={styles.dark}>{props.second}</Text>
       </Text>
     </View>
   )

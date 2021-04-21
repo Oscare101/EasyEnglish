@@ -28,5 +28,17 @@
     "description": "Learn phrasal verbs with dialogs",
     "progress": "0.2",
     "star": "true"
-  }
+  },
+  "leveltest": [
+    {
+      "task": "Chose the right answer",
+      "sentence": "Find a sentence with mistake",
+      "A": "I book a bus yesterday",
+      "B": "I booked a bus",
+      "C": "I saw her in the station",
+      "D": "I don't knoe English",
+      "answer": "I book a bus yesterday",
+      "explanation": "We use Past Simple (booked) when we talk about past (yesterday)"
+    }
+  ]
 }
