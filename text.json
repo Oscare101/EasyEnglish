@@ -1,0 +1,32 @@
+{
+  "user": {
+    "name": "User Name",
+    "level": "",
+    "progress": "66",
+    "days": "4"
+  },
+  "intermediate": {
+    "title": "Intermediate",
+    "description": "Theory and practice with tests",
+    "progress": "0.7",
+    "star": "true"
+  },
+  "upperintermediate": {
+    "title": "Upper Intermediate",
+    "description": "Theory and practice with tests",
+    "progress": "0.2",
+    "star": ""
+  },
+  "irregularverbs": {
+    "title": "Irregular Verbs",
+    "description": "Learn irregular verbs with practice",
+    "progress": "0.7",
+    "star": "true"
+  },
+  "phrasalverbs": {
+    "title": "Phrasal Verbs",
+    "description": "Learn phrasal verbs with dialogs",
+    "progress": "0.2",
+    "star": "true"
+  }
+}
