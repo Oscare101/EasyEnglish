@@ -47,6 +47,17 @@ export default function MainScreen() {
           star={text.upperintermediate.star}
         />
 
+        <View
+          style={{
+            width: width * 0.9,
+            height: 2,
+            backgroundColor: '#385E72',
+            alignSelf: 'center',
+            marginVertical: 10,
+            borderRadius: 5,
+          }}
+        ></View>
+
         <NavigateItemBlock
           title={text.irregularverbs.title}
           description={text.irregularverbs.description}

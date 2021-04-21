@@ -28,7 +28,7 @@ export default function NavigateItemBlock(props) {
       {props.star ? (
         <AntDesign name="star" size={24} color="#F8EA55" style={styles.star} />
       ) : (
-        <AntDesign name="staro" size={24} color="#666" style={styles.star} />
+        <AntDesign name="staro" size={24} color="#999" style={styles.star} />
       )}
     </View>
   )
