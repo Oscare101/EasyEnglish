@@ -13,7 +13,7 @@ export default function Header(props) {
 
 const styles = StyleSheet.create({
   header: {
-    height: 30,
+    height: 40,
     alignItems: 'center',
     justifyContent: 'center',
   },

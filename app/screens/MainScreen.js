@@ -3,7 +3,7 @@ import React from 'react'
 import { StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { AnimatedCircularProgress } from 'react-native-circular-progress'
-import { AntDesign } from '@expo/vector-icons'
+import { AntDesign, Feather } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -33,7 +33,19 @@ const Main = ({ navigation }) => {
         start={{ x: 0, y: 0 }}
       ></LinearGradient>
       <Header first="Easy" second="English" />
-      <UserBigHeader />
+      <View
+        style={{
+          position: 'absolute',
+          left: 20,
+          top: 40,
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <Feather name="menu" size={24} color="#385E72" />
+        </TouchableOpacity>
+      </View>
+
+      {/* <UserBigHeader /> */}
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{ paddingVertical: 10 }}
@@ -96,14 +108,12 @@ const Main = ({ navigation }) => {
 
 const Stack = createStackNavigator()
 
-export default function MainScreen() {
+export default function MainScreen({ navigation }) {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main" headerMode="none">
-        <Stack.Screen name="Main" component={Main} />
-        <Stack.Screen name="LevelTest" component={LevelTest} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator initialRouteName="Main" headerMode="none">
+      <Stack.Screen name="Main" component={Main} />
+      <Stack.Screen name="LevelTest" component={LevelTest} />
+    </Stack.Navigator>
   )
 }
 
